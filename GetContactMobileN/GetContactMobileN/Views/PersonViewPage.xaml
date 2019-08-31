@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GetContactMobileN.Views.PersonViewPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Name}"/>
+            <Label Text="{Binding Number}"/>
+            <Label Text="{Binding Email}"/>
+
+            <Entry x:Name="entry_Subject" Placeholder="Please Enter Subject"/>
+            <Entry x:Name="entry_message" Placeholder="Please Enter Message"/>
+
+            <Button x:Name="btn_Email" Text="Send Email" Clicked="onEmailClicked"/>
+            <Button x:Name="btn_SMS" Text="Send SMS" Clicked="onSendSMSClicked"/>
+            <Button x:Name="btn_Whatsapp" Text="Text Message With Whatsapp" Clicked="onWhatsappClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

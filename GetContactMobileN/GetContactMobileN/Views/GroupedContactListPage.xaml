@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GetContactMobileN"
+             x:Class="GetContactMobileN.Views.GroupedContactListPage">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <SearchBar x:Name="searh_NameListView" SearchButtonPressed="onSearchPressed"/>
+            <ListView x:Name="lst_Group_Contact" IsGroupingEnabled="True" GroupDisplayBinding="{Binding Key}" ItemsSource="{Binding GroupData}" HasUnevenRows="True" GroupShortNameBinding="{Binding Key}" ItemSelected="onItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Number}"/>
+                                <Label Text="{Binding Email}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <ContentView BackgroundColor="Beige">
+                            <Label Margin="10" HorizontalOptions="CenterAndExpand" Text="{Binding MyNumber, StringFormat='My number : {0}'}" TextColor="Black"/>
+                        </ContentView>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+
+                <ListView.FooterTemplate>
+                    <DataTemplate>
+                        <ContentView BackgroundColor="Aquamarine">
+                            <Label Margin="10" HorizontalOptions="CenterAndExpand" Text="{Binding ItemsCount, StringFormat='Contacts : {0}'}"  TextColor="Black"/>
+                        </ContentView>
+                    </DataTemplate>
+                </ListView.FooterTemplate>
+
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
